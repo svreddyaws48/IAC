@@ -1,0 +1,15 @@
+name: MY IAC
+on: workflow_dispatch
+env:
+  AWS_ACCESS_KEY_ID: ${{ vars.AWS_ACC1_ACCESS_KEY }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_ACC1_SECRET_KEY }}
+  AWS_REGION: ${{ vars.AWS_IAC_REGION }}
+jobs:
+  jobx:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Terraform version
+      runs: |
+         printenv
+         git --version
+         terraform --version
