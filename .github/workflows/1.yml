@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Terraform version
-      runs: |
+      run: |
          printenv
          git --version
          terraform --version
