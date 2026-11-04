@@ -1,0 +1,10 @@
+name: WF-Setof Python
+on: workflow_dispatch
+jobs:
+  jobx:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Python Setup
+      uses: actions/setup-python@v7
+      with:
+        python-version: '3.7'
