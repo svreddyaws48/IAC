@@ -7,6 +7,6 @@ jobs:
     - name: Python Setup
       uses: actions/setup-python@v7
       with:
-        python-version: '3.7'
+        python-version: '3.7.17'
     - name: Check Python Version
       run: python --version    
