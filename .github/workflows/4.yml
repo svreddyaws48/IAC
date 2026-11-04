@@ -1,0 +1,13 @@
+name: WF-SSH
+on: workflow_dispatch
+jobs:
+  jobx:
+    runs-on: ubuntu-latest
+    steps:
+    - name: SSH into Xserver
+      uses: appleboy/ssh-action@v1
+      with:
+       host: ${{ vars.XSERVER_IP }}
+       username: ${{ vars.X_SERVER_USER }}
+       key: ${{ secrets.XSERVER_PVT_KEY }}
+       script: wc -l /etc/passwd
