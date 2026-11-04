@@ -1,0 +1,21 @@
+name: WF-Uses
+on: workflow_dispatch
+env:
+  AWS_ACCESS_KEY_ID: ${{ vars.AWS_ACC1_ACCESS_KEY }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_ACC1_SECRET_KEY }}
+  AWS_REGION: ${{ vars.AWS_IAC_REGION }}
+jobs:
+  jobx:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Terraform Install
+      uses: hashicorp/setup-terraform@v4
+    - name: Check Terraform version
+      run: |
+          terraform --version
+    - name: Checkout The the Code
+      uses: actions/checkout@v7
+    - name: Display Checkout file
+      run: |
+        ls -l       
+    
